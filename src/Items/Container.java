@@ -1,16 +1,29 @@
 package Items;
 
+import Characters.Character;
+import Entity.IGrabbable;
+
 import java.util.Objects;
 
 public class Container extends Item {
-  private final Item innerItem;
+  private final IGrabbable innerItem;
 
-  public Container(String name, Item item) {
+  public Container(String name, IGrabbable item) {
     super(name);
     this.innerItem = item;
   }
 
-  public Item getInnerItem() {
+  public Container(String name, Item item, Character owner) {
+    super(name, owner);
+    if (item instanceof IGrabbable) {
+      item.setOwner(owner);
+      this.innerItem = (IGrabbable) item;
+    } else {
+      this.innerItem = null;
+    }
+  }
+
+  public IGrabbable getInnerItem() {
     return this.innerItem;
   }
 

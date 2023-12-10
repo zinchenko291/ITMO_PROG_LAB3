@@ -6,10 +6,19 @@ import java.util.Objects;
 
 public abstract class Character extends Entity {
   private final Gender gender;
+  private Entity position;
+  private String currentState = "";
+  protected Feels feel;
+  protected IGrabbable itemInHand;
 
   public Character(String name, Gender gender) {
+    this(name, gender, Feels.NORMAL);
+  }
+
+  public Character(String name, Gender gender, Feels feel) {
     this.name = name;
     this.gender = gender;
+    this.feel = feel;
   }
 
   public final String getGender() {
@@ -26,10 +35,26 @@ public abstract class Character extends Entity {
     }
   }
 
-  public abstract String feel();
-  public abstract String grab(IGrabbable obj);
-  public abstract String moveTo(Entity obj);
+  public abstract void setFeel(Feels feel);
+  public abstract void moveTo(Entity obj);
+  public abstract void grab(IGrabbable obj);
+  public IGrabbable getItemInHand() {
+    return this.itemInHand;
+  }
+  public Entity getPosition() {
+    return this.position;
+  }
+  protected void setPosition(Entity obj) {
+    this.position = obj;
+  }
 
+  @Override
+  public String toString() {
+    return this.currentState;
+  }
+  protected void setState(String state) {
+    this.currentState = state;
+  }
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
