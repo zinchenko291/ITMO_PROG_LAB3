@@ -1,9 +1,11 @@
 package Characters;
 
 import Entity.Entity;
-import Entity.IGrabbable;
 
-public interface IGrabbableCharacter extends IGrabbable {
+interface IGrabbableCharacter {
   String getGrabbablePart();
+
   void moveTo(Entity obj);
+
+  String getName();
 }

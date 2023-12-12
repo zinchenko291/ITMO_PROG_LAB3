@@ -1,10 +1,11 @@
 package Characters;
 
-import Entity.*;
+import Entity.Entity;
 import Items.Item;
 
 public class FrenBok extends Character {
   private IGrabbableCharacter characterInHand;
+
   public FrenBok() {
     super("Фрекен Бок", Gender.WOMAN);
   }
@@ -22,7 +23,7 @@ public class FrenBok extends Character {
   }
 
   @Override
-  public void grab(IGrabbable obj) {
+  public void grab(Item obj) {
     this.itemInHand = obj;
     this.setState(String.format("%s взяла %s", this.getGender(), obj.getName()));
   }

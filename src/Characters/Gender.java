@@ -1,8 +1,8 @@
 package Characters;
 
 public enum Gender {
-  MAN ("Он"),
-  WOMAN ("Она");
+  MAN("Он"),
+  WOMAN("Она");
 
   private final String gender;
 

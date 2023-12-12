@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public abstract class Entity {
   protected String name;
+
   public final String getName() {
     return this.name;
   }

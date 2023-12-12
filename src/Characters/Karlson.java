@@ -1,12 +1,14 @@
 package Characters;
 
-import Entity.*;
+import Entity.Entity;
 import Items.Container;
+import Items.Item;
 
 public class Karlson extends Character implements IGrabbableCharacter {
   public Karlson() {
     super("Кралсон", Gender.MAN);
   }
+
   public Karlson(Feels feel) {
     this();
     this.feel = feel;
@@ -25,9 +27,9 @@ public class Karlson extends Character implements IGrabbableCharacter {
   }
 
   @Override
-  public void grab(IGrabbable obj) {
+  public void grab(Item obj) {
     this.itemInHand = obj;
-    this.setState(String.format("%s взял %s", this.getGender() ,obj));
+    this.setState(String.format("%s взял %s", this.getGender(), obj));
   }
 
   public void grabFrom(Container container) {

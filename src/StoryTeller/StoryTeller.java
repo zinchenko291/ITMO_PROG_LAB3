@@ -1,15 +1,10 @@
 package StoryTeller;
 
-import Characters.Character;
 import Characters.Feels;
 import Characters.FrenBok;
 import Characters.Karlson;
-import Entity.*;
 import Items.Container;
 import Items.Item;
-import Items.SmallItem;
-
-import java.util.function.Function;
 
 public class StoryTeller {
   // Персонажи
@@ -18,7 +13,7 @@ public class StoryTeller {
 
   // Предметы
   private final Item kitchenHob = new Item("плита");
-  private final SmallItem meatball = new SmallItem("тефтелька");
+  private final Item meatball = new Item("тефтелька");
   private final Container fryingPan = new Container("сковородка", meatball, frenBok);
   private final Item door = new Item("дверь");
 
