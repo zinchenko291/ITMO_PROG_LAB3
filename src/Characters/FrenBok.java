@@ -12,13 +12,7 @@ public class FrenBok extends Character {
   @Override
   public void setFeel(Feels feel) {
     this.feel = feel;
-    switch (this.feel) {
-      case NORMAL -> this.setState(String.format("%s спокойна", this.getName()));
-      case ANGRY -> this.setState(String.format("%s начала злиться", this.getName()));
-      case SAD -> this.setState(String.format("%s взгрустнула", this.getName()));
-      case SCARY -> this.setState(String.format("У %s задрожали коленки", this.getName()));
-      case RAGE -> this.setState(String.format("%s взревела от бешенства", this.getName()));
-    }
+    this.setState(String.format("%s %s", this.getName(), feel));
   }
 
   @Override

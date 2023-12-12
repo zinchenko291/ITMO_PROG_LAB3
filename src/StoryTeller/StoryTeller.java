@@ -13,14 +13,14 @@ import java.util.function.Function;
 
 public class StoryTeller {
   // Персонажи
-  private Karlson karlson = new Karlson();
-  private FrenBok frenBok = new FrenBok();
+  private final Karlson karlson = new Karlson();
+  private final FrenBok frenBok = new FrenBok();
 
   // Предметы
-  private Item kitchenHob = new Item("плита");
-  private SmallItem meatball = new SmallItem("тефтелька");
-  private Container fryingPan = new Container("сковородка", meatball, frenBok);
-  private Item door = new Item("дверь");
+  private final Item kitchenHob = new Item("плита");
+  private final SmallItem meatball = new SmallItem("тефтелька");
+  private final Container fryingPan = new Container("сковородка", meatball, frenBok);
+  private final Item door = new Item("дверь");
 
   public void play() {
     karlson.setFeel(Feels.SCARY);

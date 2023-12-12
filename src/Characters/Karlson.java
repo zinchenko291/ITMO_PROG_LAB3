@@ -15,13 +15,7 @@ public class Karlson extends Character implements IGrabbableCharacter {
   @Override
   public void setFeel(Feels feel) {
     this.feel = feel;
-    switch (this.feel) {
-      case NORMAL -> this.setState(String.format("%sу нормально", this.getName()));
-      case ANGRY -> this.setState(String.format("%s злиться", this.getName()));
-      case SAD -> this.setState(String.format("%s надулся", this.getName()));
-      case SCARY -> this.setState(String.format("%s дрогнул губой", this.getName()));
-      case RAGE -> this.setState(String.format("%s в ярости", this.getName()));
-    }
+    this.setState(String.format("%s %s", this.getName(), feel));
   }
 
   @Override
