@@ -13,14 +13,10 @@ public class Container extends Item {
     this.innerItem = item;
   }
 
-  public Container(String name, Item item, Character owner) {
+  public Container(String name, IGrabbableItem item, Character owner) {
     super(name, owner);
-    if (item instanceof IGrabbable) {
-      item.setOwner(owner);
-      this.innerItem = (IGrabbable) item;
-    } else {
-      this.innerItem = null;
-    }
+    item.setOwner(owner);
+    this.innerItem = (IGrabbable) item;
   }
 
   public IGrabbable getInnerItem() {

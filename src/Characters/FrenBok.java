@@ -4,6 +4,7 @@ import Entity.*;
 import Items.Item;
 
 public class FrenBok extends Character {
+  private IGrabbableCharacter characterInHand;
   public FrenBok() {
     super("Фрекен Бок", Gender.WOMAN);
   }
@@ -33,15 +34,13 @@ public class FrenBok extends Character {
   }
 
   public void grabCharacter(IGrabbableCharacter character) {
-    this.itemInHand = character;
+    this.characterInHand = character;
     this.setState(String.format("%s схватила %s за %s", this.getGender(), character.getName(), character.getGrabbablePart()));
   }
 
   public void pushCharacterBehindItem(Item item) {
-    if (this.itemInHand instanceof Character) {
-      ((Character) this.itemInHand).moveTo(item);
-      this.setState(String.format("%s вытолкнула %s за %s", this.getGender(), this.itemInHand.getName(), item));
-      this.itemInHand = null;
-    }
+    this.characterInHand.moveTo(item);
+    this.setState(String.format("%s вытолкнула %s за %s", this.getGender(), this.characterInHand.getName(), item));
+    this.characterInHand = null;
   }
 }

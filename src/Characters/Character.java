@@ -22,17 +22,7 @@ public abstract class Character extends Entity {
   }
 
   public final String getGender() {
-    switch (this.gender) {
-      case MAN -> {
-        return "Он";
-      }
-      case WOMAN -> {
-        return "Она";
-      }
-      default -> {
-        return "";
-      }
-    }
+    return this.gender.toString();
   }
 
   public abstract void setFeel(Feels feel);
