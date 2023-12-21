@@ -5,7 +5,7 @@ import Items.Item;
 
 import java.util.Objects;
 
-public abstract class Character extends Entity {
+public abstract class Character extends Entity implements IMovable, IFeelable {
   private final Gender gender;
   private Entity position;
   private String currentState = "";
@@ -44,14 +44,19 @@ public abstract class Character extends Entity {
     this.position = obj;
   }
 
-  @Override
-  public String toString() {
+  public String getState() {
     return this.currentState;
   }
 
   protected void setState(String state) {
     this.currentState = state;
   }
+
+  @Override
+  public String toString() {
+    return this.getName();
+  }
+
 
   @Override
   public boolean equals(Object o) {

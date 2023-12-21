@@ -30,12 +30,12 @@ public class FrenBok extends Character {
 
   public void grabCharacter(IGrabbableCharacter character) {
     this.characterInHand = character;
-    this.setState(String.format("%s схватила %s за %s", this.getGender(), character.getName(), character.getGrabbablePart()));
+    this.setState(String.format("%s схватила %s за %s", this.getGender(), character, character.getGrabbablePart()));
   }
 
   public void pushCharacterBehindItem(Item item) {
     this.characterInHand.moveTo(item);
-    this.setState(String.format("%s вытолкнула %s за %s", this.getGender(), this.characterInHand.getName(), item));
+    this.setState(String.format("%s вытолкнула %s за %s", this.getGender(), this.characterInHand, item));
     this.characterInHand = null;
   }
 }

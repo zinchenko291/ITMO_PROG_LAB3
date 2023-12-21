@@ -19,23 +19,23 @@ public class StoryTeller {
 
   public void play() {
     karlson.setFeel(Feels.SCARY);
-    System.out.println(karlson);
+    System.out.println(karlson.getState());
     karlson.setFeel(Feels.SAD);
-    System.out.println(karlson);
+    System.out.println(karlson.getState());
     karlson.moveTo(kitchenHob);
-    System.out.println(karlson);
+    System.out.println(karlson.getState());
     karlson.grabFrom(fryingPan);
-    System.out.println(karlson);
+    System.out.println(karlson.getState());
     if (fryingPan.getOwner() == frenBok) {
       System.out.println("Вот этого ему не следовало делать");
       frenBok.setFeel(Feels.RAGE);
-      System.out.println(frenBok);
+      System.out.println(frenBok.getState());
       frenBok.moveTo(karlson);
-      System.out.println(frenBok);
+      System.out.println(frenBok.getState());
       frenBok.grabCharacter(karlson);
-      System.out.println(frenBok);
+      System.out.println(frenBok.getState());
       frenBok.pushCharacterBehindItem(door);
-      System.out.println(frenBok);
+      System.out.println(frenBok.getState());
     } else {
       frenBok.setFeel(Feels.NORMAL);
       System.out.println(frenBok);
