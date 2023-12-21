@@ -1,5 +1,5 @@
 package Characters;
 
-interface IGrabbableCharacter extends IMovable {
+interface IGrabbable extends IMovable {
   String getGrabbablePart();
 }

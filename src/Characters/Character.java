@@ -5,7 +5,7 @@ import Items.Item;
 
 import java.util.Objects;
 
-public abstract class Character extends Entity implements IMovable, IFeelable {
+public abstract class Character extends Entity implements IMovable, IFeelable, ICanTake {
   private final Gender gender;
   private Entity position;
   private String currentState = "";

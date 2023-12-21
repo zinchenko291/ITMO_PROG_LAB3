@@ -4,7 +4,7 @@ import Entity.Entity;
 import Items.Container;
 import Items.Item;
 
-public class Karlson extends Character implements IGrabbableCharacter {
+public class Karlson extends Character implements IGrabbable {
   public Karlson() {
     super("Кралсон", Gender.MAN);
   }

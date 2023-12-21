@@ -4,7 +4,7 @@ import Entity.Entity;
 import Items.Item;
 
 public class FrenBok extends Character {
-  private IGrabbableCharacter characterInHand;
+  private IGrabbable characterInHand;
 
   public FrenBok() {
     super("Фрекен Бок", Gender.WOMAN);
@@ -28,7 +28,7 @@ public class FrenBok extends Character {
     this.setState(String.format("%s взяла %s", this.getGender(), obj.getName()));
   }
 
-  public void grabCharacter(IGrabbableCharacter character) {
+  public void grabCharacter(IGrabbable character) {
     this.characterInHand = character;
     this.setState(String.format("%s схватила %s за %s", this.getGender(), character, character.getGrabbablePart()));
   }
